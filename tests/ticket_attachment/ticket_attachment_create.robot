@@ -8,6 +8,6 @@ Ticket Attachment Create - Success
     Create Session  ticket-attachment  http://develop.crmservice.s3.stuffio.com/api/ticket-attachment
     ${file_data}=    Get File    foobar.txt
     &{files}=    Create Dictionary    file=${file_data}
-    &{params}=   Create Dictionary   message_id=99    file_name=file_from_handsome_robot
+    &{params}=   Create Dictionary   message_id=99    file_name=file_from_handsome_robot22
     ${resp}=  Post Request  ticket-attachment		/   params=${params}   files=${files}
     Should Be Equal As Strings  ${resp.status_code}  200
