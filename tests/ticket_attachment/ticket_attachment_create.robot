@@ -1,6 +1,7 @@
 *** Settings ***
 Library	Collections
 Library	RequestsLibrary
+Library  OperatingSystem
 
 *** Test cases ***
 Ticket Attachment Create - Success
