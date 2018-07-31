@@ -6,6 +6,8 @@ Library	RequestsLibrary
 Ticket Attachment Create - Success
     [Tags]  Ticket Attachment Create
     Create Session  ticket-attachment  http://develop.crmservice.s3.stuffio.com/api/ticket-attachment
-    &{params}=   Create Dictionary   message_id=1
-    ${resp}=  Post Request  ticket-attachment		/   params=${params}
+    ${file_data}=    Get File    foobar.txt
+    &{files}=    Create Dictionary    file=${file_data}
+    &{params}=   Create Dictionary   message_id=99    file_name=file_from_handsome_robot
+    ${resp}=  Post Request  ticket-attachment		/   params=${params}   files=${files}
     Should Be Equal As Strings  ${resp.status_code}  200
